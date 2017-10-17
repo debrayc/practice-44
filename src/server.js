@@ -2,6 +2,7 @@ const path = require('path')
 const express = require('express')
 const bodyParser = require('body-parser')
 const db = require('./db')
+const auth = require('./auth')
 
 const port = process.env.PORT || 3000
 
@@ -23,6 +24,13 @@ app.get('/', (req, res) => {
     }
   })
 })
+
+app.get('/sign-up', (req, res) => res.render('sign-up')
+app.post('/sign-up', bodyParser.json(), (req, res) => {
+  let email = req.body.email
+  let password = 
+})
+app.get('/sign-in', (req, res) => res.render('sign-in')
 
 app.get('/albums/:albumID', (req, res) => {
   const albumID = req.params.albumID

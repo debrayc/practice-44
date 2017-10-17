@@ -15,5 +15,7 @@ CREATE TABLE users (
 CREATE TABLE reviews (
   id SERIAL PRIMARY KEY,
   album_id INTEGER REFERENCES albums(id),
-  user_id INTEGER REFERENCES users(id)
+  user_id INTEGER REFERENCES users(id),
+  content VARCHAR(1000),
+  date_posted DATETIME DEFAULT CURRENT_TIMESTAMP
 );
